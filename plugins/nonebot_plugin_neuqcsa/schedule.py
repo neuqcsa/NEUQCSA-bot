@@ -28,14 +28,19 @@ async def send_poster():
             schedule_group_id) + " 发送 " + poster_path)
 
 # 定时任务，基于装饰器的方式
-@scheduler.scheduled_job("cron", hour=8, id="job_8", misfire_grace_time=None)
+# @scheduler.scheduled_job("cron", hour=8, id="job_8", misfire_grace_time=None)
 async def task_8():
     await send_poster()
-@scheduler.scheduled_job("cron", hour=14, id="job_14", misfire_grace_time=None)
+# @scheduler.scheduled_job("cron", hour=14, id="job_14", misfire_grace_time=None)
 async def task_14():
     await send_poster()
-@scheduler.scheduled_job("cron", hour=19, id="job_19", misfire_grace_time=None)
+# @scheduler.scheduled_job("cron", hour=19, id="job_19", misfire_grace_time=None)
 async def task_19():
+    await send_poster()
+
+# 在每天的 11、13、15、17、19、21 点发一次
+@scheduler.scheduled_job("cron", hour="11-21/2", id="cron_job", misfire_grace_time=None)
+async def cron_task():
     await send_poster()
 
 # 启动时输出定时任务
