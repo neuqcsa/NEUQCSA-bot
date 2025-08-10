@@ -5,7 +5,7 @@ from .utils import random_image
 import random
 
 greet = on_regex(r"(^兔兔$)|(兔兔在吗)")
-persecute = on_keyword({"驴驴", "阿米驴", "驴子", "驴肉", "马户", "红烧兔", "红烧驴", "麻辣兔"})
+persecute = on_keyword({"驴驴", "阿米驴", "驴子", "驴肉", "马户", "红烧兔", "红烧驴", "麻辣兔", "清蒸兔"})
 poke = on_notice(rule=is_type(PokeNotifyEvent) & to_me())
 
 @greet.handle()
