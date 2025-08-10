@@ -20,7 +20,7 @@ async def send_poster():
                                                                      "🕹️从竞赛奖项到科创加分拿到手软🕹️\n"
                                                                      "\n"
                                                                      "🎭参加黑客夏令营，解开黑客攻防的秘密🎭\n"
-                                                                     "😋还有7.28日开始的彩蛋题活动，U盘、PCB尺子、限定贴纸等你来拿，一血甚至还有专属神秘奖励😋\n"
+                                                                     "😋2025暑期课程已开始，学长学姐带你从零入门😋\n"
                                                                      "👉加群开启黑客之旅：" + str(config.neuqcsa_group_id) + "\n"
                                                                      "不管你是零基础还是大神都可以加入进来！详细信息可以到协会官网了解：www点neuqcsa点cn" + resource(poster_path))
         for superuser in config.superusers:

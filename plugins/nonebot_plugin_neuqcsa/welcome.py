@@ -12,5 +12,5 @@ async def handle_welcome(event: GroupIncreaseNoticeEvent):
         await welcome.finish(MessageSegment.at(event.user_id) +
                              " 🎉欢迎来到NEUQCSA2025招新群～🎉\n"
                              "加群后请按照年级-专业-姓名的格式修改群昵称\n"
-                             "招新计划即将开始。\n"
-                             "想对网安/CTF有更多了解的，可以B站搜索并关注我们协会官方账号NEUQCSA，里面有往期的暑期课。虽然今年课程内容可能较往年不同，但是大体方向还是一致的。")
+                             "2025暑期夏令营课程已开始，欢迎大家到协会B站账号NEUQCSA学习~\n"
+                             "更多信息请看群公告和群文件，如有疑问欢迎在群内交流~")
