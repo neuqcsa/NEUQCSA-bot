@@ -24,8 +24,7 @@ async def send_poster():
                                                                      "👉加群开启黑客之旅：" + str(config.neuqcsa_group_id) + "\n"
                                                                      "不管你是零基础还是大神都可以加入进来！详细信息可以到协会官网了解：www点neuqcsa点cn" + resource(poster_path))
         for superuser in config.superusers:
-            await bot.send_private_msg(user_id=superuser, message=str(datetime.now()) + " 已向群 " + str(
-            schedule_group_id) + " 发送 " + poster_path)
+            await bot.send_private_msg(user_id=superuser, message=str(datetime.now()) + " 已向群 " + str(schedule_group_id) + " 发送 " + poster_path)
 
 # 定时任务，基于装饰器的方式
 # @scheduler.scheduled_job("cron", hour=8, id="job_8", misfire_grace_time=None)
