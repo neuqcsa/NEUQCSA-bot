@@ -8,18 +8,36 @@ from datetime import datetime
 async def send_poster():
     logger.info("Sending poster...")
     bot = nonebot.get_bot()
+    
     for schedule_group_id in config.schedule_group_ids:
-        poster_path = "？CTF海报.png"
-        await bot.send_group_msg(group_id=schedule_group_id, message="🎉网络空间安全协会招新开始啦🎉\n"
-                                                                     "😎加入我们，成为黑客！😎\n"
-                                                                     "💪从网站攻击到算法破解应有尽有💪\n"
-                                                                     "🧨从漏洞挖掘到漏洞利用样样满足🧨\n"
-                                                                     "🕹️从竞赛奖项到科创加分拿到手软🕹️\n"
-                                                                     "\n"
-                                                                     "🎭参加黑客夏令营，解开黑客攻防的秘密🎭\n"
-                                                                     "😋本轮招新计划将在9.27开始，在 ?CTF 的赛场上展现你的锋芒😋\n"
-                                                                     "👉加群开启黑客之旅：" + str(config.neuqcsa_group_id) + "\n"
-                                                                     "不管你是零基础还是大神都可以加入进来！详细信息可以到协会官网了解：www点neuqcsa点cn" + resource(poster_path))
+        poster_path = "CTF海报.png"
+        
+        text_content = (
+            "🎉 网络空间安全协会招新开始啦！🎉\n"
+            "\n"
+            "😎 加入我们，开启黑客之旅！😎\n"
+            "💪 从Web攻防到算法破解，技能树全面点亮\n"
+            "🧨 从漏洞挖掘到渗透测试，实战经验满满\n"
+            "🕹️ 从竞赛获奖到科创加分，收获超乎想象\n"
+            "\n"
+            "🎭 参加黑客夏令营，揭开网络安全的神秘面纱\n"
+            "⚔️ 本轮招新将在军训后正式启动，期待在赛场上见证你的锋芒！\n"
+            "\n"
+            "⚠️ 进群后请密切关注群公告，不错过任何重要通知！\n"
+            f"👉 加群开启黑客之旅：{config.neuqcsa_group_id}\n"
+            "🌐 官网了解更多：https://www.neuqcsa.cn\n"
+            "\n"
+            "✨ 无论零基础还是大佬，我们都欢迎你的加入！✨"
+        )
+        
+        from nonebot.adapters.onebot.v11 import Message, MessageSegment
+        
+        msg = Message([
+            MessageSegment.text(text_content),
+            MessageSegment.image(file=resource(poster_path))
+        ])
+        
+        await bot.send_group_msg(group_id=schedule_group_id, message=msg)
 <<<<<<< HEAD
         # for superuser in config.superusers:
         #     await bot.send_private_msg(user_id=superuser, message=str(datetime.now()) + " 已向群 " + str(schedule_group_id) + " 发送 " + poster_path)
